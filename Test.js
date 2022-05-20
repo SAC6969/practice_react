@@ -7,6 +7,28 @@ class Test extends Component {
             name: "sachin",
             add: 1,
         }
+        this.testing();
+    }
+
+    testing(){
+        const promise = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve('done')
+            },5000)
+        })
+
+        promise.then(()=>{
+            this.setState({
+                add: this.state.add+10
+            })
+            this.setState({
+                add: this.state.add+10
+            })
+            this.setState({
+                add: this.state.add+10
+            })
+            console.log('state',this.state);
+        })
     }
 
     handleAdd = ()=> {
@@ -17,21 +39,15 @@ class Test extends Component {
             add : this.state.add +1
         })
 
-        this.setState({
-            add : this.state.add +1
-        })
-
-        this.setState({
-            add : this.state.add +1
-        })
-
         //type two of state
         // this.setState((prevState)=>{
         //     return{
         //         add : prevState.add + 1
         //     }
-        // })
+        // })\
+
     }
+
   render() {
     console.log('render')
     return (
